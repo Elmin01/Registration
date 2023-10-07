@@ -56,7 +56,7 @@ registerBtnElement.onclick = () => {
         }
     }
 
-    if(!ValidateEmail.test && !passwordInputValue && !confirmPasswordInputValue){
+    if(!ValidateEmail.test && !validatePassword.test && !confirmPasswordInputValue){
         alert ("Feel the empty gaps")
         return;
     }
@@ -64,7 +64,7 @@ registerBtnElement.onclick = () => {
         alert("Feel the email")
         return;
     }
-    else if(!passwordInputValue){
+    else if(!validatePassword.test){
         alert("Feel the password gap")
         return;
     }
