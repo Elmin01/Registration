@@ -10,6 +10,8 @@ const userIDElement = document.getElementById("user-id")
 const userEmailElement = document.getElementById("user-email")
 const userPasswordElement = document.getElementById("user-password")
 
+const userTableRowElement = document.getElementById("user-row")
+
 
 
 
@@ -27,7 +29,7 @@ registerBtnElement.onclick = () => {
     };
 
     if( passwordInputValue !== confirmPasswordInputValue){
-        console.log("password does not match")
+        alert("password does not match")
         return;
     }
     function ValidateEmail(emailInputValue){
@@ -57,12 +59,12 @@ registerBtnElement.onclick = () => {
     
     const deleteBtnElement = document.createElement("button");
     deleteBtnElement.textContent = "x";
-    newTableElement.append(deleteBtnElement);
+    userTableRowElement.append(deleteBtnElement);
 
     deleteBtnElement.onclick = () => {
         if(confirm("are you sure to delete>")){
 
-            newTableElement.remove();
+            userTableRowElement.remove();
         }
     };
 };
