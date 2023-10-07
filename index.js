@@ -30,6 +30,19 @@ registerBtnElement.onclick = () => {
         console.log("password does not match")
         return;
     }
+    function ValidateEmail(emailInputValue){
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailInputElement.value.match(mailformat)){
+        alert("Valid email address!");
+        document.form1.text1.focus();
+        return true;
+    }
+    else{
+        alert("You have entered an invalid email address!");
+        document.form1.text1.focus();
+        return false;
+    }
+};
 
     const newUserEmailElement = document.createElement("td");
     newUserEmailElement.textContent = emailInputValue
@@ -42,4 +55,14 @@ registerBtnElement.onclick = () => {
     passwordInputElement.value = "";   
 
     
-}
+    const deleteBtnElement = document.createElement("button");
+    deleteBtnElement.textContent = "x";
+    newTableElement.append(deleteBtnElement);
+
+    deleteBtnElement.onclick = () => {
+        if(confirm("are you sure to delete>")){
+
+            newTableElement.remove();
+        }
+    };
+};
