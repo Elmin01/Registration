@@ -113,31 +113,21 @@ loginBtnElement.onclick = () =>{
     const emailInputValue = emailInputElement.value.trim();
     const passwordInputValue = passwordInputElement.value.trim();
 
-    const emailLoginValue = emailLoginElement.value.trim();
-    const passwordLoginValue = passwordLoginElement.value.trim();
+    const emailLoginValue = userTableBodyElement.value.trim();
+    const passwordLoginValue = userTableBodyElement.value.trim();
 
-   const validUserEmail = emailInputValue;
-   const validUserPassword = passwordInputValue;
-
-
-    // const newUserEmailElement = document.createElement("td");
-    // newUserEmailElement.textContent = emailInputValue;
-    // userTableBodyElement.append(newUserEmailElement);
-    // emailInputElement.value = "";   
-
-    // const newUserPasswordElement = document.createElement("td");
-    // newUserPasswordElement.textContent = passwordInputValue;
-    // userTableBodyElement.append(newUserPasswordElement);
-    // passwordInputElement.value = "";   
-    // confirmPasswordInputElement.value = "";
+//    const validUserEmail = emailInputValue;
+//    const validUserPassword = passwordInputValue;
 
 
 
-    if(emailLoginValue !== emailInputValue){
+
+
+    if(emailLoginValue !== userTableBodyElement){
         alert("email is not correct")
         return;
     }
-    else if(passwordLoginValue !== passwordInputValue){
+    else if(passwordLoginValue !== userTableBodyElement){
         alert("password is not correct")
         return;
     }
