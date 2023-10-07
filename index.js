@@ -56,11 +56,11 @@ registerBtnElement.onclick = () => {
         }
     }
 
-    if(!emailInputValue && !passwordInputValue && !confirmPasswordInputValue){
+    if(!ValidateEmail.test && !passwordInputValue && !confirmPasswordInputValue){
         alert ("Feel the empty gaps")
         return;
     }
-    else if(!emailInputValue){
+    else if(!ValidateEmail.test){
         alert("Feel the email")
         return;
     }
@@ -72,10 +72,10 @@ registerBtnElement.onclick = () => {
         alert("password does not match")
         return;
     }
-    else{
-        alert("Registration is successful")
-        return;
-    };
+    // else{
+        // alert("Registration is successful")
+        // return
+    // };
     
     function ValidateEmail(emailInputValue){
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -106,7 +106,8 @@ registerBtnElement.onclick = () => {
             return false;
         }
     }
-
+    alert("Registration is successful")
+    return
 };
 
 loginBtnElement.onclick = () =>{
