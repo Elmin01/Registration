@@ -1,3 +1,5 @@
+
+
 const emailInputElement = document.getElementById("email-input");
 const passwordInputElement = document.getElementById("password-input");
 const confirmPasswordInputElement = document.getElementById("confirm-input");
@@ -11,6 +13,7 @@ const userEmailElement = document.getElementById("user-email")
 const userPasswordElement = document.getElementById("user-password")
 
 const userTableRowElement = document.getElementById("user-row")
+const userTableBodyElement = document.getElementById("user-body")
 
 
 
@@ -23,48 +26,64 @@ registerBtnElement.onclick = () => {
     const passwordInputValue = passwordInputElement.value.trim();
     const confirmPasswordInputValue = confirmPasswordInputElement.value.trim();
 
-    if(!emailInputValue || !passwordInputValue || !confirmPasswordInputValue){
-        alert ("Feel the empty gaps")
-        return;
-    };
-
-    if( passwordInputValue !== confirmPasswordInputValue){
-        alert("password does not match")
-        return;
-    }
-    function ValidateEmail(emailInputValue){
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(emailInputElement.value.match(mailformat)){
-        alert("Valid email address!");
-        document.form1.text1.focus();
-        return true;
-    }
-    else{
-        alert("You have entered an invalid email address!");
-        document.form1.text1.focus();
-        return false;
-    }
-};
-
     const newUserEmailElement = document.createElement("td");
-    newUserEmailElement.textContent = emailInputValue
-    userEmailElement.append(newUserEmailElement);
+    newUserEmailElement.textContent = emailInputValue;
+    userTableBodyElement.append(newUserEmailElement);
     emailInputElement.value = "";   
 
     const newUserPasswordElement = document.createElement("td");
     newUserPasswordElement.textContent = passwordInputValue;
-    userPasswordElement.append(newUserPasswordElement);
+    userTableBodyElement.append(newUserPasswordElement);
     passwordInputElement.value = "";   
+    confirmPasswordInputElement.value = "";
 
     
     const deleteBtnElement = document.createElement("button");
     deleteBtnElement.textContent = "x";
-    userTableRowElement.append(deleteBtnElement);
+    userTableBodyElement.append(deleteBtnElement);
 
-    deleteBtnElement.onclick = () => {
+    deleteBtnElement.onclick = () => 
+    {
         if(confirm("are you sure to delete>")){
 
-            userTableRowElement.remove();
+            userTableBodyElement.remove();
+        }
+    }
+
+    if(!emailInputValue && !passwordInputValue && !confirmPasswordInputValue){
+        alert ("Feel the empty gaps")
+        return;
+    }
+    else if(!emailInputValue){
+        alert("Feel the email")
+        return;
+    }
+    else if(!passwordInputValue){
+        alert("Feel the password gap")
+        return;
+    }
+    else if( passwordInputValue !== confirmPasswordInputValue){
+        alert("password does not match")
+        return;
+    }
+    else{
+        alert("Registration is successful")
+        return;
+    };
+    
+    function ValidateEmail(emailInputValue){
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(emailInputElement.value.match(mailformat)){
+            alert("Valid email address!");
+            document.form1.text1.focus();
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            document.form1.text1.focus();
+            return false;
         }
     };
+
 };
