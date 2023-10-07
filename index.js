@@ -72,10 +72,10 @@ registerBtnElement.onclick = () => {
         alert("password does not match")
         return;
     }
-    // else{
-        // alert("Registration is successful")
-        // return
-    // };
+    else{
+        alert("Registration is successful")
+        return
+    };
     
     function ValidateEmail(emailInputValue){
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -106,8 +106,7 @@ registerBtnElement.onclick = () => {
             return false;
         }
     }
-    alert("Registration is successful")
-    return
+   
 };
 
 loginBtnElement.onclick = () =>{
