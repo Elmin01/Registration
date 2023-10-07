@@ -3,7 +3,9 @@
 const emailInputElement = document.getElementById("email-input");
 const passwordInputElement = document.getElementById("password-input");
 const confirmPasswordInputElement = document.getElementById("confirm-input");
+
 const registerBtnElement = document.getElementById("register-btn");
+const loginBtnElement = document.getElementById("login-button");
 
 const emailLogin = document.getElementById("email-login");
 const passwordLogin = document.getElementById("password-login");
@@ -14,6 +16,10 @@ const userPasswordElement = document.getElementById("user-password")
 
 const userTableRowElement = document.getElementById("user-row")
 const userTableBodyElement = document.getElementById("user-body")
+
+const emailLoginElement = document.getElementById("email-login");
+const passwordLoginElement = document.getElementById("password-login");
+
 
 
 
@@ -85,5 +91,44 @@ registerBtnElement.onclick = () => {
             return false;
         }
     };
+
+};
+
+loginBtnElement.onclick = () =>{
+    const emailInputValue = emailInputElement.value.trim();
+    const passwordInputValue = passwordInputElement.value.trim();
+
+    const emailLoginValue = emailLoginElement.value.trim();
+    const passwordLoginValue = passwordLoginElement.value.trim();
+
+   const validUserEmail = emailInputValue;
+   const validUserPassword = passwordInputValue;
+
+
+    // const newUserEmailElement = document.createElement("td");
+    // newUserEmailElement.textContent = emailInputValue;
+    // userTableBodyElement.append(newUserEmailElement);
+    // emailInputElement.value = "";   
+
+    // const newUserPasswordElement = document.createElement("td");
+    // newUserPasswordElement.textContent = passwordInputValue;
+    // userTableBodyElement.append(newUserPasswordElement);
+    // passwordInputElement.value = "";   
+    // confirmPasswordInputElement.value = "";
+
+
+
+    if(emailLoginValue !== emailInputValue){
+        alert("email is not correct")
+        return;
+    }
+    else if(passwordLoginValue !== passwordInputValue){
+        alert("password is not correct")
+        return;
+    }
+    
+        alert("login successful")
+        return;
+
 
 };
