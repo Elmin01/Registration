@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>Register</h1>
+    <input id="email-input" type="text" placeholder="email">
+    <input id="password-input" type="password" placeholder="password">
+    <input id="confirm-input" type="password" placeholder="confirm password">
+    <button id="register-btn">Register</button>
+    </div>
+
+    <div>
+        <h1>Users</h1>
+        <h5>Email  password</h5>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th> Mail</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="user-body">
+                <tr id="user-row">
+                    <td id="user-id"></td>
+                    <td id="user-email"></td>
+                    <td id="user-password"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h1>Login</h1>
+        <input id="email-login" type="text" placeholder="email">
+        <input id="password-login" type="password" placeholder="password">
+        <button id=" ">Login</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
